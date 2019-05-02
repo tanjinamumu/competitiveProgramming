@@ -1,5 +1,8 @@
 #include<stdio.h>
 #include<string.h>
+/*
+    *****#Welcome to Mumu's Code#*****
+*/
 int main()
 {
     int t;
@@ -22,5 +25,9 @@ int main()
         }
 
     }
+/*
+    *****#Welcome to Mumu's Code#*****
+*/
     return 0;
+    mor
 }
