@@ -1,5 +1,8 @@
 #include<stdio.h>
 int main()
+/*
+    *****#Welcome to Mumu's Code#*****
+*/
 {
     int a,b,t,i,j,sum;
     scanf("%d", &t);
@@ -12,8 +15,12 @@ int main()
         {
             sum=sum+j;
         }
+/*
+    *****#Welcome to Mumu's Code#*****
+*/
         printf("Case %d: %d\n", i, sum);
 
     }
+    //mor
     return 0;
 }
