@@ -11,11 +11,17 @@ int knapsack(int n, int num)
         for(int j= 0; j<=num; j++)
         {
             if(i == 0 || j== 0)
+            {
                 matrix[i][j]= 0;
+            }
             else if(w[i-1] <= j)
+            {
                 matrix[i][j]= max(v[i-1]+matrix[i-1][j-w[i-1]], matrix[i-1][j]);
+            }
             else
+            {
                 matrix[i][j]= matrix[i-1][j];
+            }
         }
     }
     return matrix[n][num];
