@@ -1,19 +1,34 @@
+//factorial of big integer
 #include<bits/stdc++.h>
 using namespace std;
 int main()
 {
-    int t,i,j,fact=1;
+    int t;
     cin>>t;
-    string n[102];
-    for(i=1; i<=t; i++)
+    while(t--)
     {
-        cin>>n[i];
-        for(j=1; j<=n[i];j++)
+        int n;
+        int i,fac=0,j,carry=0,sum[1000]= {1};
+        cin>>n;
+        for(i=1; i<=n; i++)
         {
-            fact=fact*j;
+            for(j=0; j<=fac; j++)
+            {
+                sum[j]=sum[j]*i+carry;
+                carry=sum[j]/10;
+                sum[j]=sum[j]%10;
+            }
+            while(carry)
+            {
+                fac++;
+                sum[fac]=carry%10;
+                carry/=10;
+            }
         }
-        cout<<fact<<endl;
-        fact=1;
+        for(i=fac; i>=0; i--)
+        {
+            cout<<sum[i];
+        }
+        cout<<endl;
     }
-    return 0;
 }
