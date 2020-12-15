@@ -1,44 +1,38 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
-
-bool isSubset(int set[], int n, int sum)
-{
-    if (sum == 0)
-    {
-        return true;
-    }
-    if (sum != 0)
-    {
-        return false;
-    }
-    if (set[n-1]>sum)
-    {
-        return isSubset(set, n-1, sum);
-    }
-    return isSubset(set, n , sum) || isSubset(set, n - 1, sum - set[n]);
-}
-
 int main()
 {
-    int t;
+    int t,k;
     cin>>t;
-    while(t-->0)
+    while(t--)
     {
         int n,m;
         cin>>n>>m;
-        int a[n];
-        for(int i=0; i<n; i++)
+        int b[1005];
+        for(int i=0; i<=m; i++)
         {
-            cin>>a[i];
+            b[i]=0;
         }
-        if(isSubset(a,n,m))
+        while(n--)
         {
-            cout<<"Yes"<<endl;
+            cin>>k;
+            for(int i=m; i>=0; i--)
+            {
+                if(b[i]&&(i+k<=m))
+                {
+                    b[i+k]=1;
+                }
+            }
+            b[k]=1;
         }
+
+        if(b[m])
+         {
+             cout<<"Yes"<<endl;
+         }
         else
         {
             cout<<"No"<<endl;
         }
     }
-    return 0;
 }
